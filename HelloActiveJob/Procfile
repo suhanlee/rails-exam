@@ -1,0 +1,3 @@
+web: bundle exec puma -p $PORT -e $RACK_ENV   # Command to start your server
+redis: redis-server                           # Command to start redis
+worker: bundle exec sidekiq                   # Command to start sidekiq
