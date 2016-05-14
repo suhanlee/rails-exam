@@ -1,0 +1,6 @@
+<%= form_tag({ action: 'result' }, remote: true) do %>
+  <%= select_tag(:publish, options_from_collection_for_select(@books, :publish, :publish, 'a')) %>
+  <%= submit_tag '검색' %>
+<% end %>
+<span id="progress"></span>
+<ul id="result"></ul>
