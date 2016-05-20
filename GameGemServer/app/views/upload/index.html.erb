@@ -1,0 +1,4 @@
+<%= form_tag({ action: :create }, multipart: true) do %>
+  <%= file_field_tag :filename, size: 50 %>
+<%= submit_tag 'upload' %>
+<% end %>
