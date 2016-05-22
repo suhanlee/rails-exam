@@ -17,8 +17,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :article %><br>
-      <%= f.text_field :article_id %>
+      <%= f.hidden_field :article_id, value: @comment.article_id %>
     </div>
 
   <div class="field">
