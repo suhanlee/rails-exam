@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="ui header">Listing Boards</h1>
+
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Contents</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boards.each do |board| %>
+      <tr>
+        <td><%= board.name %></td>
+        <td><%= board.title %></td>
+        <td><%= board.contents %></td>
+        <td><%= link_to 'Show', board, :class => 'ui primary button' %></td>
+        <td><%= link_to 'Edit', edit_board_path(board), :class => 'ui secondary button' %></td>
+        <td><%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'ui red basic button' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+  <tr><th colspan="6">
+    <div class="ui right floated pagination menu">
+      <a class="icon item">
+        <i class="left chevron icon"></i>
+      </a>
+      <a class="item">1</a>
+      <a class="item">2</a>
+      <a class="item">3</a>
+      <a class="item">4</a>
+      <a class="icon item">
+        <i class="right chevron icon"></i>
+      </a>
+    </div>
+  </th>
+  </tfoot>
+</table>
+
+<br>
+
+<%= link_to 'New Board', new_board_path, :class => 'ui primary button' %>

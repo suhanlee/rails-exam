@@ -1,0 +1,38 @@
+<div class="ui container">
+  <div class="ui grid">
+    <div class="six wide column">
+      <%= form_for @board, :class => 'ui form' do |f| %>
+          <% if @board.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@board.errors.count, "error") %> prohibited this board from being saved:</h2>
+
+                <ul>
+                  <% @board.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+
+          <%= f.label :name %><br>
+          <div class="field">
+            <%= f.text_field :name %>
+          </div>
+
+          <%= f.label :title %><br>
+          <div class="field">
+            <%= f.text_field :title %>
+          </div>
+
+          <%= f.label :contents %><br>
+          <div class="field">
+            <%= f.text_area :contents, :rows => 4 %>
+          </div>
+          <div class="actions">
+            <%= f.submit :submit, :class => 'ui button' %>
+            <%= link_to 'Back', boards_path, :class => 'ui button' %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
