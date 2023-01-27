@@ -46,6 +46,6 @@ group :development do
 end
 
 
-gem 'devise', '3.4.1'
+gem 'devise', '4.7.1'
 gem 'bootstrap-sass'
 gem 'jquery-turbolinks'
